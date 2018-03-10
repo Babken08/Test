@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Avand</string>
+    <string name="signup">SIGNUP</string>
+    <string name="login">LOGIN</string>
+    <string name="english">English</string>
+    <string name="need_help">Need help?</string>
+    <string name="welcome">WELCOME</string>
+</resources>
