@@ -5,4 +5,14 @@
     <string name="english">English</string>
     <string name="need_help">Need help?</string>
     <string name="welcome">WELCOME</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="by_facebook">BY FACEBOOK</string>
+    <string name="manually">MANUALLY</string>
+    <string name="send">SEND</string>
+    <string name="sms_code">Sms Code</string>
+    <string name="cinfirm">CONFIRM</string>
+    <string name="send_agein">Send Agein</string>
+    <string name="wrong_code">Wrong Code</string>
+
 </resources>

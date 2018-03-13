@@ -1,18 +1,17 @@
 package com.example.android.avand;
 
-import android.content.res.Resources;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class LoginOrSignup extends AppCompatActivity {
+public class LoginOrSignup extends AppCompatActivity implements View.OnClickListener {
 
 
     private static final String TAG  = "ssssssssssssssss";
@@ -24,34 +23,16 @@ public class LoginOrSignup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_or_signup);
 
-        initWidget();
-
-
-
-//        tvFont.setTypeface(font);
-//        tvFont.setText("\uf042");
+//        Window window = getWindow();
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            window.setStatusBarColor(ContextCompat.getColor(LoginOrSignup.this,R.color.colorGreen));
+//        }
 
         Toolbar toolbar= (Toolbar) findViewById(R.id.tool_bar);
-        toolbar.setPadding(0, getStatusBarHeight(), 0, 0);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null)
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow(); // in Activity's onCreate() for instance
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
-
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            getWindow().getDecorView().setSystemUiVisibility(
-//                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
-//                            View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-//Status bar color, set to whatever opacity/color you want
-
-//            getWindow().setStatusBarColor(Color.TRANSPARENT);
-//        }
-
-
+        initWidget();
 
     }
 
@@ -61,6 +42,11 @@ public class LoginOrSignup extends AppCompatActivity {
         TextView tvToolBar = (TextView) findViewById(R.id.tv_tool_bar);
         TextView tvIconBack = (TextView) findViewById(R.id.tv_icon_back);
         tvToolBar.setText(R.string.welcome);
+        Button btnLogin = (Button) findViewById(R.id.btn_login);
+        Button btnSignUp = (Button) findViewById(R.id.btn_sign_up);
+
+        btnLogin.setOnClickListener(this);
+        btnSignUp.setOnClickListener(this);
 
         Typeface font = Typeface.createFromAsset(getAssets(), "font/fa-solid-900.ttf");
 
@@ -68,25 +54,43 @@ public class LoginOrSignup extends AppCompatActivity {
         tvIconLocalisation.setTypeface(font);
         tvIconBack.setTypeface(font);
 
-        tvIconNeedHelp.setText("\uf042");
+        tvIconNeedHelp.setText("\uf02d");
         tvIconLocalisation.setText("\uf0ac");
         tvIconBack.setText("\uF137");
     }
 
-    private int getStatusBarHeight() {
-        int height;
+//    private int getStatusBarHeight() {
+//        int height;
+//
+//        Resources myResources = getResources();
+//        int idStatusBarHeight = myResources.getIdentifier(
+//                "status_bar_height", "dimen", "android");
+//        if (idStatusBarHeight > 0) {
+//            height = getResources().getDimensionPixelSize(idStatusBarHeight);
+//            Log.i(TAG, "Status Bar Height = " + height);
+//        }else{
+//            height = 0;
+//            Log.i(TAG, "Resources NOT found");
+//        }
+//
+//        return height;
+//    }
 
-        Resources myResources = getResources();
-        int idStatusBarHeight = myResources.getIdentifier(
-                "status_bar_height", "dimen", "android");
-        if (idStatusBarHeight > 0) {
-            height = getResources().getDimensionPixelSize(idStatusBarHeight);
-            Log.i(TAG, "Status Bar Height = " + height);
-        }else{
-            height = 0;
-            Log.i(TAG, "Resources NOT found");
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_login: {
+                startActivity(new Intent(LoginOrSignup.this, FillInfo.class));
+                break;
+            }
+            case R.id.btn_sign_up: {
+                startActivity(new Intent(LoginOrSignup.this, SignUp.class));
+                break;
+            }
+            case R.id.tv_icon_back: {
+                onBackPressed();
+                break;
+            }
         }
-
-        return height;
     }
 }
