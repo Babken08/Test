@@ -14,5 +14,8 @@
     <string name="cinfirm">CONFIRM</string>
     <string name="send_agein">Send Agein</string>
     <string name="wrong_code">Wrong Code</string>
+    <string name="confirm_phone_number">CONFIRM PHONE NUMBER</string>
+    <string name="fill_personal_info">FILL PERSONAL INFO</string>
+    <string name="forget_password">FORGET PASSWORD</string>
 
 </resources>

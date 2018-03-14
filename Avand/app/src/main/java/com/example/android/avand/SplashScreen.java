@@ -19,33 +19,12 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        Toolbar toolbar= (Toolbar) findViewById(R.id.tool_bar);
-        toolbar.setPadding(0, getStatusBarHeight(), 0, 0);
-        setSupportActionBar(toolbar);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow(); // in Activity's onCreate() for instance
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         Intent i = new Intent(this, LoginOrSignup.class);
         startActivity(i);
+        finish();
     }
 
-    private int getStatusBarHeight() {
-        int height;
-
-        Resources myResources = getResources();
-        int idStatusBarHeight = myResources.getIdentifier(
-                "status_bar_height", "dimen", "android");
-        if (idStatusBarHeight > 0) {
-            height = getResources().getDimensionPixelSize(idStatusBarHeight);
-            Log.i(TAG, "Status Bar Height = " + height);
-        }else{
-            height = 0;
-            Log.i(TAG, "Resources NOT found");
-        }
-
-        return height;
-    }
 }

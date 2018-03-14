@@ -27,20 +27,18 @@
             android:id="@+id/tv_phone_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:layout_marginStart="48dp"
             android:text="Phone Number"
             android:textColor="@color/colorWhite"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:layout_marginLeft="48dp" />
 
 
         <RelativeLayout
-            android:layout_marginTop="1dp"
             android:layout_below="@+id/tv_phone_number"
             android:id="@+id/relative_phone_number"
             android:layout_width="wrap_content"
             android:layout_height="39dp"
-            android:layout_alignParentEnd="true"
             android:layout_marginLeft="29dp"
             android:layout_marginRight="29dp"
             android:background="@drawable/shap_password">
@@ -53,7 +51,9 @@
                 android:paddingStart="10dp"
                 android:drawableStart="@drawable/ic_phone"
                 android:textColor="@color/colorWhite"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:paddingLeft="10dp"
+                android:drawableLeft="@drawable/ic_phone" />
 
             <EditText
                 android:id="@+id/et_phone_number"
@@ -62,7 +62,8 @@
                 android:paddingStart="5dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:background="#00ffffff"/>
+                android:background="#00ffffff"
+                android:paddingLeft="5dp" />
 
         </RelativeLayout>
 
@@ -72,10 +73,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="6dp"
             android:text="Password"
             android:textSize="14sp"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="48dp" />
 
         <RelativeLayout
             android:layout_below="@+id/tv_password"
@@ -83,7 +85,6 @@
             android:layout_height="39dp"
             android:layout_marginLeft="29dp"
             android:layout_marginRight="29dp"
-            android:layout_marginTop="1dp"
             android:id="@+id/relative_password"
             android:background="@drawable/shap_password"
             >
@@ -95,7 +96,8 @@
                 android:textColor="@color/colorWhite"
                 android:id="@+id/tv_icon_password"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp" />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/etPasswordLayout"
@@ -105,7 +107,8 @@
                 android:layout_alignWithParentIfMissing="true"
                 app:hintEnabled="false"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/colorWhite">
+                app:passwordToggleTint="@color/colorWhite"
+                android:layout_marginLeft="35dp">
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/etPassword"
@@ -124,7 +127,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_below="@+id/relative_password"
-            android:layout_marginTop="26dp">
+            android:layout_marginTop="26dp"
+            android:layout_marginLeft="50dp">
             <CheckBox
                 android:id="@+id/checkBox"
                 android:layout_centerVertical="true"
@@ -142,7 +146,8 @@
                 android:layout_toEndOf="@+id/checkBox"
                 android:layout_centerVertical="true"
                 android:text="Remember Password"
-                android:textColor="@color/colorWhite" />
+                android:textColor="@color/colorWhite"
+                android:layout_toRightOf="@+id/checkBox" />
         </RelativeLayout>
 
 
@@ -171,13 +176,13 @@
 
     <RelativeLayout
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="35dp"
             android:orientation="horizontal"
             android:layout_width="wrap_content"
@@ -214,8 +219,8 @@
         <LinearLayout
             android:layout_alignParentRight="true"
             android:layout_marginTop="35dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginLeft="18dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">

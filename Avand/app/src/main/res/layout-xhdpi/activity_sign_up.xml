@@ -50,7 +50,9 @@
                 android:background="#00ffffff"
                 android:drawableStart="@drawable/ic_phone"
                 android:inputType="textPassword"
-                android:paddingStart="9dp" />
+                android:paddingStart="9dp"
+                android:drawableLeft="@drawable/ic_phone"
+                android:paddingLeft="9dp" />
         </RelativeLayout>
 
         <TextView
@@ -77,7 +79,8 @@
                 android:layout_centerVertical="true"
                 android:paddingStart="15dp"
                 android:textColor="@color/colorWhite"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:paddingLeft="15dp" />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/etPasswordLayout"
@@ -87,7 +90,8 @@
                 android:paddingStart="35dp"
                 app:hintEnabled="false"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/colorWhite">
+                app:passwordToggleTint="@color/colorWhite"
+                android:paddingLeft="35dp">
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/etPassword"

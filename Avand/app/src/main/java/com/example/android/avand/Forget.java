@@ -15,20 +15,23 @@ public class Forget extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget);
 
+        toolBarInit();
+        initWidget();
+    }
+
+    private void toolBarInit() {
         Toolbar toolbar= (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayShowTitleEnabled(false);
-        initWidget();
     }
 
     private void initWidget() {
-        TextView tvIconPassword = (TextView) findViewById(R.id.tv_icon_password);
         TextView tvIconNeedHelp = (TextView) findViewById(R.id.tv_icon_need_help);
         TextView tvIconLocalisation = (TextView) findViewById(R.id.tv_icon_localisation);
         TextView tvToolBar = (TextView) findViewById(R.id.tv_tool_bar);
         TextView tvIconBack = (TextView) findViewById(R.id.tv_icon_back);
-        tvToolBar.setText("FORGET PASSWORD");
+        tvToolBar.setText(R.string.forget_password);
         Button btnLogin  = (Button) findViewById(R.id.btn_send);
 
         Typeface font = Typeface.createFromAsset(getAssets(), "font/fa-solid-900.ttf");

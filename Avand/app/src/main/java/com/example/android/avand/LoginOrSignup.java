@@ -23,17 +23,16 @@ public class LoginOrSignup extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_or_signup);
 
-//        Window window = getWindow();
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            window.setStatusBarColor(ContextCompat.getColor(LoginOrSignup.this,R.color.colorGreen));
-//        }
+        toolBarInit();
+        initWidget();
 
+    }
+
+    private void toolBarInit() {
         Toolbar toolbar= (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null)
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        initWidget();
-
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     private void initWidget() {
@@ -47,6 +46,7 @@ public class LoginOrSignup extends AppCompatActivity implements View.OnClickList
 
         btnLogin.setOnClickListener(this);
         btnSignUp.setOnClickListener(this);
+        tvIconBack.setOnClickListener(this);
 
         Typeface font = Typeface.createFromAsset(getAssets(), "font/fa-solid-900.ttf");
 
@@ -93,4 +93,6 @@ public class LoginOrSignup extends AppCompatActivity implements View.OnClickList
             }
         }
     }
+
+
 }

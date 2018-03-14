@@ -17,14 +17,15 @@ public class FillInfo extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fill_info);
 
-        Toolbar toolbar= (Toolbar) findViewById(R.id.tool_bar);
-//        toolbar.setPadding(0, getStatusBarHeight(), 0, 0);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-
+        toolBarInit();
         initWidget();
+    }
 
-
+    private void toolBarInit() {
+        Toolbar toolbar= (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     private void initWidget() {
@@ -35,7 +36,7 @@ public class FillInfo extends AppCompatActivity implements View.OnClickListener 
         TextView tvIconLanguage = (TextView) findViewById(R.id.tv_icon_localisation);
         TextView tvToolBar = (TextView) findViewById(R.id.tv_tool_bar);
         TextView tvIconBack = (TextView) findViewById(R.id.tv_icon_back);
-        tvToolBar.setText("FILL PERSONAL INFO");
+        tvToolBar.setText(R.string.fill_personal_info);
 
         Typeface font = Typeface.createFromAsset(getAssets(), "font/fa-solid-900.ttf");
         Typeface font1 = Typeface.createFromAsset(getAssets(), "font/fa-brands-400.ttf");

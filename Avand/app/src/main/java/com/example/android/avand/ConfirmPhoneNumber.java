@@ -15,20 +15,25 @@ public class ConfirmPhoneNumber extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_corfirm_phone_number);
 
+
+        toolBarInit();
+        initWidget();
+    }
+
+    private void toolBarInit() {
         Toolbar toolbar= (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayShowTitleEnabled(false);
-        initWidget();
     }
 
     private void initWidget() {
-        TextView tvIconPassword = (TextView) findViewById(R.id.tv_icon_password);
         TextView tvIconNeedHelp = (TextView) findViewById(R.id.tv_icon_need_help);
         TextView tvIconLocalisation = (TextView) findViewById(R.id.tv_icon_localisation);
         TextView tvToolBar = (TextView) findViewById(R.id.tv_tool_bar);
         TextView tvIconBack = (TextView) findViewById(R.id.tv_icon_back);
-        tvToolBar.setText("LOGIN");
+        TextView tvIconSendAgein = (TextView) findViewById(R.id.ttv_send_agein);
+        tvToolBar.setText(R.string.confirm_phone_number);
         Button btnConfirm  = (Button) findViewById(R.id.btn_confirm);
 
         Typeface font = Typeface.createFromAsset(getAssets(), "font/fa-solid-900.ttf");
@@ -36,11 +41,9 @@ public class ConfirmPhoneNumber extends AppCompatActivity implements View.OnClic
         tvIconNeedHelp.setTypeface(font);
         tvIconLocalisation.setTypeface(font);
         tvIconBack.setTypeface(font);
+        tvIconSendAgein.setTypeface(font);
 
-        tvIconNeedHelp.setTypeface(font);
-        tvIconLocalisation.setTypeface(font);
-        tvIconBack.setTypeface(font);
-
+        tvIconSendAgein.setText("\uf2f9");
         tvIconNeedHelp.setText("\uf02d");
         tvIconLocalisation.setText("\uf0ac");
         tvIconBack.setText("\uF137");

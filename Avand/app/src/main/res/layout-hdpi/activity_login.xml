@@ -27,11 +27,11 @@
             android:id="@+id/tv_phone_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:layout_marginStart="43dp"
             android:text="Phone Number"
             android:textColor="@color/colorWhite"
-            android:textSize="11sp" />
+            android:textSize="11sp"
+            android:layout_marginLeft="43dp" />
 
 
         <RelativeLayout
@@ -40,7 +40,6 @@
             android:id="@+id/relative_phone_number"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
             android:layout_marginLeft="26dp"
             android:layout_marginRight="26dp"
             android:background="@drawable/shap_password">
@@ -53,16 +52,19 @@
                 android:paddingStart="7dp"
                 android:drawableStart="@drawable/ic_phone"
                 android:textColor="@color/colorWhite"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:paddingLeft="7dp"
+                android:drawableLeft="@drawable/ic_phone" />
 
             <EditText
                 android:id="@+id/et_phone_number"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:paddingStart="5dp"
+                android:paddingStart="6dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:background="#00ffffff"/>
+                android:background="#00ffffff"
+                android:paddingLeft="6dp" />
 
         </RelativeLayout>
 
@@ -75,7 +77,8 @@
             android:layout_marginTop="6dp"
             android:text="Password"
             android:textSize="11sp"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="43dp" />
 
         <RelativeLayout
             android:layout_below="@+id/tv_password"
@@ -95,7 +98,8 @@
                 android:textColor="@color/colorWhite"
                 android:id="@+id/tv_icon_password"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp" />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/etPasswordLayout"
@@ -105,7 +109,8 @@
                 android:layout_alignWithParentIfMissing="true"
                 app:hintEnabled="false"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/colorWhite">
+                app:passwordToggleTint="@color/colorWhite"
+                android:layout_marginLeft="35dp">
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/etPassword"
@@ -124,7 +129,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="44dp"
             android:layout_below="@+id/relative_password"
-            android:layout_marginTop="21dp">
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="44dp">
             <CheckBox
                 android:id="@+id/checkBox"
                 android:layout_centerVertical="true"
@@ -142,7 +148,8 @@
                 android:layout_toEndOf="@+id/checkBox"
                 android:layout_centerVertical="true"
                 android:text="Remember Password"
-                android:textColor="@color/colorWhite" />
+                android:textColor="@color/colorWhite"
+                android:layout_toRightOf="@+id/checkBox" />
         </RelativeLayout>
 
 

@@ -16,12 +16,16 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        toolBarInit();
+        initWidget();
+
+    }
+
+    private void toolBarInit() {
         Toolbar toolbar= (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayShowTitleEnabled(false);
-        initWidget();
-
     }
 
     private void initWidget() {
@@ -31,7 +35,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         TextView tvIconLocalisation = (TextView) findViewById(R.id.tv_icon_localisation);
         TextView tvToolBar = (TextView) findViewById(R.id.tv_tool_bar);
         TextView tvIconBack = (TextView) findViewById(R.id.tv_icon_back);
-        tvToolBar.setText("LOGIN");
+        tvToolBar.setText(R.string.login);
         Button btnLogin  = (Button) findViewById(R.id.btn_login);
 
         Typeface font = Typeface.createFromAsset(getAssets(), "font/fa-solid-900.ttf");
@@ -39,6 +43,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         tvIconNeedHelp.setTypeface(font);
         tvIconLocalisation.setTypeface(font);
         tvIconBack.setTypeface(font);
+        tvIconPassword.setTypeface(font);
 
         tvIconNeedHelp.setTypeface(font);
         tvIconLocalisation.setTypeface(font);
@@ -47,6 +52,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         tvIconNeedHelp.setText("\uf02d");
         tvIconLocalisation.setText("\uf0ac");
         tvIconBack.setText("\uF137");
+        tvIconPassword.setText("\uf023");
 
         btnLogin.setOnClickListener(this);
         tvForgetPassword.setOnClickListener(this);
